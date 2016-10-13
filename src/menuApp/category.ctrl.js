@@ -4,7 +4,7 @@
 angular.module('MenuApp')
 .controller('CategoryController', CategoryController);
 
-CategoryController.$inject = [ShoppingListService];
+CategoryController.$inject = ['ShoppingListService'];
 // function CategoryController(ShoppingListService) {
 function CategoryController(ShoppingListService) {
   var mainList = this;
@@ -15,6 +15,7 @@ function CategoryController(ShoppingListService) {
     ShoppingListService.getItems()
     .then(function (result) {
       mainList.items = result;
+      console.log(mainList.items);
     });
   };
 }

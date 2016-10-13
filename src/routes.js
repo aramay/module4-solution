@@ -13,8 +13,9 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     //    Tab1 is matching directly with the name of the state Tab1 defined in html tags
       url: '/',
       templateUrl: 'src/menuApp/templates/home.template.html'
+
   }).state('category',{
-      url: '/category',
+      url: '/category-list',
       templateUrl: 'src/menuApp/templates/categories.temp.html'
   });
 }

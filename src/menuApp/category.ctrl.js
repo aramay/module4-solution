@@ -16,8 +16,8 @@ function CategoryController(MenuDataService) {
     .then(function (result) {
       mainList.items = result;
 
-      console.log(mainList.items);
-      
+      console.log("main list controller ", mainList.items);
+
     });
   };
 }

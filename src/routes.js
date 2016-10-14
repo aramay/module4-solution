@@ -16,7 +16,8 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 
   }).state('category',{
       url: '/category-list',
-      templateUrl: 'src/menuApp/templates/categories.temp.html'
+      templateUrl: 'src/menuApp/templates/categories.temp.html',
+      controller: 'CategoryController as ctrl'
   });
 }
 

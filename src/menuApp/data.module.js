@@ -1,9 +1,9 @@
 (function () {
 'use strict';
 
-angular.module('data', []);
+angular.module('Data', []);
 
-angular.module('data')
+angular.module('Data')
 .config(function () {
   console.log("Data config fired.");
 }).

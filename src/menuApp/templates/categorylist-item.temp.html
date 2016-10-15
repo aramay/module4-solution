@@ -1,8 +1,10 @@
 <ul>
-  <li ng-repeat="item in $ctrl.items">
+  <li ng-repeat="item in $ctrl.items"
+  ui-sref="category.itemDetail({categoryShortName: item.short_name})">
       <!-- {{$ctrl}} -->
+      {{ item.name }} -Short Name =>
+      ({{ item.short_name }})
 
-      {{ item.name }}
   <!-- </li> ui-sref="mainList.itemDetail({itemId: $index})"> -->
   </li>
 </ul>

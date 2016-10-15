@@ -1,20 +1,6 @@
-<!-- <div ng-controller="CategoryController as ctrl"> -->
 
-    <!-- <a ui-serif="home">Home</a> &lt;
-    <a ui-serif="category">List</a> &lt; -->
+<a ui-sref="items">Items</a>
 
-<ul>
-    <li ng-repeat="item in $ctrl.itemslist">
+{{itemctrl}}
 
-        {{$ctrl.itemslist}}
-
-        <!-- {{item}} -->
-
-        <!-- {{ctrl.categoryShortName}} -->
-
-        Item Description: {{ctrl.description}}
-        Item name: {{ctrl.name}}
-        Item Quantity: {{ctrl.price_large}}
-    </li>
-</ul>
-<!-- </div> -->
+<category-item-list itemslist="itemctrl.itemslist"></category-item-list>

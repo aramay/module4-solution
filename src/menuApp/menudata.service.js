@@ -36,7 +36,8 @@ function MenuDataService($q, $timeout, $http) {
       };
 
       service.getItemsForCategory = function(categoryShortName){
-console.log(categoryShortName);
+
+console.log("getItemsForCategory service ", categoryShortName);
 
         console.log("categoryShortName ", categoryShortName);
           var deferred = $q.defer();

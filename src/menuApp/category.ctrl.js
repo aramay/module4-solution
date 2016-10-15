@@ -5,38 +5,16 @@ angular.module('MenuApp')
 .controller('CategoryController', CategoryController);
 
 // CategoryController.$inject = ['MenuDataService'];
-CategoryController.$inject = ['$stateParams', 'items', 'MenuDataService'];
+CategoryController.$inject = ['items'];
 // function CategoryController(MenuDataService) {
-function CategoryController($stateParams, items, MenuDataService) {
+function CategoryController(items) {
   var mainList = this;
 
   mainList.items = items;
 
-  var categoryShortName = $stateParams.categoryShortName;
-
-  mainList.itemslist = [];
-
-  MenuDataService.getItemsForCategory(categoryShortName).
-  then(function (result) {
-      mainList.itemslist = result.menu_items;
-
-      console.log("inside CategoryController ", mainList.itemslist);
-  });
+  // var categoryShortName = $stateParams.categoryShortName;
 
 
-  console.log("main list controller ", mainList.items);
-
-  console.log("outside CategoryController ", mainList.itemslist);
-
-  // mainList.$onInit = function () {
-  //   MenuDataService.getItems()
-  //   .then(function (result) {
-  //     mainList.items = result;
-  //
-  //     console.log("main list controller ", mainList.items);
-  //
-  //   });
-  // };
 }
 
 })();

@@ -1,4 +1,10 @@
 
-<a ui-sref="items">Items</a>
+<a ui-sref="itemDetail({categoryShortName: itemctrl.short_name})">Items</a>
+
+{{itemctrl}}
 
 <category-item-list itemslist="itemctrl.itemslist"></category-item-list>
+
+
+<ui-view>
+</ui-view>

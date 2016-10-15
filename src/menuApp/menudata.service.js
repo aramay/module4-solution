@@ -15,7 +15,7 @@ function MenuDataService($q, $timeout, $http) {
 
   // Simulates call to server
   // Returns a promise, NOT items array directly
-  service.getItems = function () {
+  service.getAllCategories = function () {
 
       var deferred = $q.defer();
       //call API to fetch data
@@ -25,13 +25,37 @@ function MenuDataService($q, $timeout, $http) {
           url: "https://davids-restaurant.herokuapp.com/categories.json"
       }).then(function (response) {
           deferred.resolve(response.data);
+          console.log("http request 'getAllCategories' ", response);
 
       }, function (response) {
-
-          defer.reject(response);
+          console.log("request failed ", response);
+          deferred.reject(response);
 
       });
         return deferred.promise;
+      };
+
+      service.getItemsForCategory = function(categoryShortName){
+console.log(categoryShortName);
+
+        console.log("categoryShortName ", categoryShortName);
+          var deferred = $q.defer();
+          //call API to fetch data
+          $http({
+              method: 'GET',
+              //   url: (ApiBasePath + "/categories.json")
+              url: "https://davids-restaurant.herokuapp.com/menu_items.json?category="+categoryShortName
+
+          }).then(function (response) {
+              deferred.resolve(response.data);
+              console.log("http request 'getItemsForCategory' ", response);
+
+          }, function (response) {
+              console.log("request failed ", response);
+              deferred.reject(response);
+
+          });
+            return deferred.promise;
       };
   }
 

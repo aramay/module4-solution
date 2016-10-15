@@ -7,13 +7,11 @@
 
     ItemsController.$inject = ['itemslist', '$stateParams','MenuDataService'];
 
-    function ItemsController(itemslist, $stateParams, MenuDataService) {
-// debugger;
-    var itemctrl = this;
+    function ItemsController(itemslist) {
 
-    itemctrl.itemslist = itemslist.menu_items;
+    var itemCtrl = this;
 
-    var categoryShortName = $stateParams.categoryShortName;
+    itemCtrl.itemslist = itemslist.menu_items;
 
     }
 

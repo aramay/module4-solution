@@ -6,8 +6,8 @@ angular.module('Data')
 constant('ApiBasePath', "https://davids-restaurant.herokuapp.com");
 
 
-MenuDataService.$inject = ['$q', '$timeout', '$http'];
-function MenuDataService($q, $timeout, $http) {
+MenuDataService.$inject = ['$q', '$timeout', '$http', 'ApiBasePath'];
+function MenuDataService($q, $timeout, $http, ApiBasePath) {
   var service = this;
 
   // List of shopping items
@@ -22,7 +22,7 @@ function MenuDataService($q, $timeout, $http) {
       $http({
           method: 'GET',
           //   url: (ApiBasePath + "/categories.json")
-          url: "https://davids-restaurant.herokuapp.com/categories.json"
+          url: ApiBasePath + "/categories.json"
       }).then(function (response) {
           deferred.resolve(response.data);
           console.log("http request 'getAllCategories' ", response);
@@ -37,7 +37,7 @@ function MenuDataService($q, $timeout, $http) {
 
       service.getItemsForCategory = function(categoryShortName){
 
-console.log("getItemsForCategory service ", categoryShortName);
+        console.log("getItemsForCategory service ", categoryShortName);
 
         console.log("categoryShortName ", categoryShortName);
           var deferred = $q.defer();

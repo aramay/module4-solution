@@ -23,14 +23,11 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
               return MenuDataService.getAllCategories();
           }]
       }
-  }).state('category.itemDetail', {
+  }).state('itemDetail', {
      url: '/item-detail/{categoryShortName}',
      templateUrl: 'src/menuApp/templates/category-items-list.temp.html',
      controller: 'ItemsController as itemctrl',
      resolve:{
-        // itemslist: ['MenuDataService', function (MenuDataService) {
-        //     return MenuDataService.getItemsForCategory();
-        // }]
         itemslist: function ($stateParams, MenuDataService) {
             return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
         }

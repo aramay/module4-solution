@@ -15,13 +15,6 @@
 
     var categoryShortName = $stateParams.categoryShortName;
 
-    // MenuDataService.getItemsForCategory(categoryShortName).
-    // then(function (result) {
-    //
-    //     itemctrl.itemslist = result;
-    //
-    // });
-
     }
 
 }) ();
